@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -15,9 +13,33 @@ return {
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
-        -- Normal = { bg = "#000000" },
+        -- Normal
+        Normal = { bg = "none" },
+        SignColumn = { bg = "none" },
+        FoldColumn = { bg = "none" },
+        NormalFloat = { bg = "none" },
+        NormalNC = { bg = "none" },
+        NormalSB = { bg = "none" },
+        -- WinBar
+        WinBar = { bg = "none" },
+        WinBarNC = { bg = "none" },
+        WhichKeyFloat = { bg = "none" },
+        -- Telescope
+        TelescopeBorder = { bg = "none" },
+        TelescopePromptTitle = { bg = "none" },
+        TelescopePromptBorder = { bg = "none" },
+        TelescopeNormal = { bg = "none" },
+        -- Diagnosis
+        -- NeoTree
+        NeoTreeNormal = { bg = "none" },
+        NeoTreeNormalNC = { bg = "none" },
+        NeoTreeTabInactive = { bg = "none" },
+        -- Spectre
+        -- StatusLine
+        -- QuickFixLine
+        -- Notifications
       },
-      astrodark = { -- a table of overrides/changes when applying the astrotheme theme
+      astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
       },
     },

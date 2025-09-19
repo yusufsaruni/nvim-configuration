@@ -9,6 +9,7 @@ if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
     -- stylua: ignore
     vim.api.nvim_echo({ { ("Error cloning lazy.nvim:\n%s\n"):format(result), "ErrorMsg" }, { "Press any key to exit...", "MoreMsg" } }, true, {})
     vim.fn.getchar()
+    vim.opt.clipboard = "unnamedplus"
     vim.cmd.quit()
   end
 end
@@ -20,6 +21,7 @@ if not pcall(require, "lazy") then
   -- stylua: ignore
   vim.api.nvim_echo({ { ("Unable to load lazy from: %s\n"):format(lazypath), "ErrorMsg" }, { "Press any key to exit...", "MoreMsg" } }, true, {})
   vim.fn.getchar()
+  vim.opt.clipboard = "unnamedplus"
   vim.cmd.quit()
 end
 

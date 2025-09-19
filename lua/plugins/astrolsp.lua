@@ -43,6 +43,9 @@ return {
       "html",
       "lua_ls",
       "ts_ls",
+      "eslint",
+      "yamlls",
+      "rust_analyzer",
       "tailwindcss"
     },
     -- customize language server configuration options passed to `lspconfig`
