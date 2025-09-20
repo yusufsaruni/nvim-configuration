@@ -1,0 +1,4 @@
+-- ~/.config/nvim/lua/plugins/cmp.lua
+return {
+}
+
