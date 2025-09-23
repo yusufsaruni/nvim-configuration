@@ -45,6 +45,9 @@ return {
       "yamlls",
       "rust_analyzer",
       "tailwindcss",
+      emmet_language_server = {
+         filetypes = { "html", "javascriptreact", "typescriptreact", "css", "scss" },
+      },
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields

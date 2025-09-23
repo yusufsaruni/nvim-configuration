@@ -1,5 +1,8 @@
-if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
--- This will run last in the setup process.
--- This is just pure lua so anything that doesn't
--- fit in the normal config locations above can go here
+-- lua/polish.lua
+print("Custom keymaps loaded!")
+vim.opt.mouse = ""
+
+-- Just set them directly
+vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode with jj" })
+vim.keymap.set("i", "<S-CR>", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode with Shift+Enter" })
