@@ -1,19 +1,19 @@
 -- JDTLS (Java LSP) configuration
 local home = vim.env.HOME
 
-local jdtls = require("jdtls")
+local jdtls = require "jdtls"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = home .. "/jdtls-workspace/" .. project_name
 
 local system_os = ""
-if vim.fn.has("mac") == 1 then
+if vim.fn.has "mac" == 1 then
   system_os = "mac"
-elseif vim.fn.has("unix") == 1 then
+elseif vim.fn.has "unix" == 1 then
   system_os = "linux"
-elseif vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+elseif vim.fn.has "win32" == 1 or vim.fn.has "win64" == 1 then
   system_os = "win"
 else
-  print("OS not found, defaulting to 'linux'")
+  print "OS not found, defaulting to 'linux'"
   system_os = "linux"
 end
 
@@ -34,8 +34,10 @@ local config = {
     "-javaagent:" .. home .. "/.local/share/nvim/mason/share/jdtls/lombok.jar",
     "-Xmx4g",
     "--add-modules=ALL-SYSTEM",
-    "--add-opens", "java.base/java.util=ALL-UNNAMED",
-    "--add-opens", "java.base/java.lang=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.util=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.lang=ALL-UNNAMED",
     "-jar",
     home .. "/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
     "-configuration",
@@ -44,7 +46,7 @@ local config = {
     workspace_dir,
   },
 
-  root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "pom.xml", "build.gradle" }),
+  root_dir = require("jdtls.setup").find_root { ".git", "mvnw", "pom.xml", "build.gradle" },
 
   settings = {
     java = {
@@ -100,9 +102,8 @@ local config = {
 }
 
 config["on_attach"] = function(client, bufnr)
-  jdtls.setup_dap({ hotcodereplace = "auto" })
+  jdtls.setup_dap { hotcodereplace = "auto" }
   require("jdtls.dap").setup_dap_main_class_configs()
 end
 
 jdtls.start_or_attach(config)
-

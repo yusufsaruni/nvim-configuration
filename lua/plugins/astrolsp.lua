@@ -43,10 +43,11 @@ return {
       "ts_ls",
       "eslint",
       "yamlls",
+      "gopls",
       "rust_analyzer",
       "tailwindcss",
       emmet_language_server = {
-         filetypes = { "html", "javascriptreact", "typescriptreact", "css", "scss" },
+        filetypes = { "html", "javascriptreact", "typescriptreact", "css", "scss" },
       },
     },
     -- customize language server configuration options passed to `lspconfig`
