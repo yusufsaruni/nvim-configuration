@@ -14,26 +14,6 @@ return {
     highlights = {
       init = { -- this table overrides highlights in all themes
         -- Normal
-        Normal = { bg = "none" },
-        SignColumn = { bg = "none" },
-        FoldColumn = { bg = "none" },
-        NormalFloat = { bg = "none" },
-        NormalNC = { bg = "none" },
-        NormalSB = { bg = "none" },
-        -- WinBar
-        WinBar = { bg = "none" },
-        WinBarNC = { bg = "none" },
-        WhichKeyFloat = { bg = "none" },
-        -- Telescope
-        TelescopeBorder = { bg = "none" },
-        TelescopePromptTitle = { bg = "none" },
-        TelescopePromptBorder = { bg = "none" },
-        TelescopeNormal = { bg = "none" },
-        -- Diagnosis
-        -- NeoTree
-        NeoTreeNormal = { bg = "none" },
-        NeoTreeNormalNC = { bg = "none" },
-        NeoTreeTabInactive = { bg = "none" },
         -- Spectre
         -- StatusLine
         -- QuickFixLine
