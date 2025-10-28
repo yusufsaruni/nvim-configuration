@@ -19,9 +19,12 @@ end
 
 -- Debug and test support
 local bundles = {
-  vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
+  vim.fn.glob(home .. "/AppData/Local/nvim-data/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
 }
-vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-test/*.jar", 1), "\n"))
+vim.list_extend(
+  bundles,
+  vim.split(vim.fn.glob(home .. "/AppData/Local/nvim-data/mason/share/java-test/*.jar", 1), "\n")
+)
 
 local config = {
   cmd = {
@@ -31,7 +34,7 @@ local config = {
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
     "-Dlog.protocol=true",
     "-Dlog.level=ALL",
-    "-javaagent:" .. home .. "/.local/share/nvim/mason/share/jdtls/lombok.jar",
+    "-javaagent:" .. home .. "/AppData/Local/nvim-data/mason/share/jdtls/lombok.jar",
     "-Xmx4g",
     "--add-modules=ALL-SYSTEM",
     "--add-opens",
@@ -39,9 +42,9 @@ local config = {
     "--add-opens",
     "java.base/java.lang=ALL-UNNAMED",
     "-jar",
-    home .. "/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
+    home .. "/AppData/Local/nvim-data/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
     "-configuration",
-    home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. system_os,
+    home .. "/AppData/Local/nvim-data/mason/packages/jdtls/config_" .. system_os,
     "-data",
     workspace_dir,
   },
@@ -50,14 +53,17 @@ local config = {
 
   settings = {
     java = {
-      home = "/usr/lib/jvm/java-21-openjdk-amd64",
+      home = "C:/Program Files/Java/jdk-21/",
       eclipse = { downloadSources = true },
+      autobuild = {
+        enabled = false,
+      },
       configuration = {
         updateBuildConfiguration = "interactive",
         runtimes = {
-          { name = "JavaSE-21", path = "/usr/lib/jvm/java-21-openjdk-amd64" },
-          { name = "JavaSE-24", path = "/usr/lib/jvm/jdk-24.0.2-oracle-x64" },
-          { name = "JavaSE-25", path = "/usr/lib/jvm/jdk-25-oracle-x64" },
+          { name = "JavaSE-21", path = "C:/Program Files/Java/jdk-21/" },
+          { name = "JavaSE-24", path = "C:/Program Files/Java/jdk-24/" },
+          { name = "JavaSE-25", path = "C:/Program Files/Java/jdk-25/" },
         },
       },
       maven = { downloadSources = true },
@@ -93,7 +99,7 @@ local config = {
     },
   },
 
-  capabilities = require("blink.cmp").get_lsp_capabilities(),
+  -- capabilities = require("blink.cmp").get_lsp_capabilities(),
   flags = { allow_incremental_sync = true },
   init_options = {
     bundles = bundles,

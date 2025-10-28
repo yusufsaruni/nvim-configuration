@@ -36,24 +36,16 @@ return {
       -- end
     },
     -- enable servers that you already have installed without mason
-    servers = {
-      "pyright",
-      "html",
-      "lua_ls",
-      "ts_ls",
-      "eslint",
-      "yamlls",
-      "gopls",
-      "rust_analyzer",
-      "tailwindcss",
-      emmet_language_server = {
-        filetypes = { "html", "javascriptreact", "typescriptreact", "css", "scss" },
-      },
-    },
+    servers = {},
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      ts_ls = {},
+      tailwindcss = {},
+      html = {},
+      pyright = {},
+      lua_ls = {},
     },
     -- customize how language servers are attached
     handlers = {
