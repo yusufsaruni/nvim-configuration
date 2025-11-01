@@ -2,7 +2,7 @@
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
-
+local util = require "lspconfig/util"
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -42,10 +42,28 @@ return {
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       ts_ls = {},
-      tailwindcss = {},
+      tailwindcss = {
+        filetypes = { "css" },
+      },
       html = {},
       pyright = {},
+      cssls = {},
       lua_ls = {},
+      gopls = {
+        cmd = { "gopls" },
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+        -- capabilities = {},
+        settings = {
+          gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+              unusedparams = true,
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
