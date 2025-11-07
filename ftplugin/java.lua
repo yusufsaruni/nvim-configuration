@@ -42,7 +42,7 @@ local config = {
     "--add-opens",
     "java.base/java.lang=ALL-UNNAMED",
     "-jar",
-    home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher.jar",
+    home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.7.100.v20251014-1222.jar",
     "-configuration",
     home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. system_os,
     "-data",

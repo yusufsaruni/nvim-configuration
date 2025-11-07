@@ -41,13 +41,37 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      ts_ls = {},
+      ts_ls = {
+init_options = {
+    preferences = {
+      importModuleSpecifierPreference = "non-relative",
+      includeCompletionsForImportStatements = true,
+      includeCompletionsWithInsertText = true,
+    },
+    hostInfo = "neovim",
+  },
+  settings = {
+    javascript = {
+      suggest = { autoImports = true },
+      format = { enable = false },
+    },
+    typescript = {
+      suggest = { autoImports = true },
+      format = { enable = false },
+    },
+  },
+  flags = {
+    debounce_text_changes = 150,
+  },
+  single_file_support = false,
+  root_dir = util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git"),
+      },
       tailwindcss = {
-        filetypes = { "css" },
       },
       html = {},
       pyright = {},
       cssls = {},
+      rust_analyzer= {},
       lua_ls = {},
       gopls = {
         cmd = { "gopls" },
