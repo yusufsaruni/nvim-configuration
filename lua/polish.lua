@@ -9,7 +9,8 @@ vim.opt.guicursor = {
   "sm:block-blinkwait175-blinkoff150-blinkon175", -- showmatch = block with blink
 }
 
-vim.keymap.set("v", "jk", "<Esc>", { noremap = true, silent = true, desc = "Exit visual mode with Shift+Enter" })
+vim.keymap.set("v", "ev", "<Esc>", { noremap = true, silent = true, desc = "Exit visual mode with Shift+Enter" })
+vim.keymap.set('t', 'jj', '<C-\\><C-n>', { noremap = true, silent = true, desc = "Exit terminal mode with jj" })
 -- Just set them directly
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode with jj" })
 vim.keymap.set("i", "<S-CR>", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode with Shift+Enter" })

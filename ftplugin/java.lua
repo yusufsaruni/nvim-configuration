@@ -19,11 +19,11 @@ end
 
 -- Debug and test support
 local bundles = {
-  vim.fn.glob(home .. "/.local/share/nvim/mason/packages/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
+  vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
 }
 vim.list_extend(
   bundles,
-  vim.split(vim.fn.glob(home .. "/.local/share/nvim/mason/packages/java-test/*.jar", 1), "\n")
+  vim.split(vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-test/*.jar", 1), "\n")
 )
 
 local config = {
@@ -53,7 +53,7 @@ local config = {
 
   settings = {
     java = {
-      home = "/usr/lib/jvm/java-21-openjdk-amd64/",
+      home = "/usr/lib/jvm/java-21-openjdk/",
       eclipse = { downloadSources = true },
       autobuild = {
         enabled = false,
@@ -61,9 +61,8 @@ local config = {
       configuration = {
         updateBuildConfiguration = "interactive",
         runtimes = {
-          { name = "JavaSE-21", path = "/usr/lib/jvm/java-21-openjdk-amd64/" },
-          { name = "JavaSE-24", path = "/usr/lib/jvm/jdk-24.0.2-oracle-x64/" },
-          { name = "JavaSE-25", path = "/usr/lib/jvm/jdk-25.0.1-oracle-x64/" },
+          { name = "JavaSE-21", path = "/usr/lib/jvm/java-21-openjdk/" },
+          { name = "JavaSE-25", path = "/usr/lib/jvm/java-25-openjdk/" },
         },
       },
       maven = { downloadSources = true },
